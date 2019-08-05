@@ -1,29 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html> <![endif]-->
+<!--[if !IE]><!--><html lang="en"><!-- <![endif]-->
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
     <title>Message</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body bgcolor="#F0E68C">
-    <div>
-        <img src="groot.png" width="200" height="600" style="opacity: 1; float: left; margin-left: 20px" border="0">
-        <img src="isabella.png" width="200" height="600" style="opacity: 1; float: right; margin-right: 20px" border="0">
-        <p style="text-align: center"><pre>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Nulla dapibus fringilla suscipit. Nunc ultricies dapibus arcu, 
-            sit amet finibus magna consequat sed. 
-            Donec faucibus dolor ac erat dignissim vehicula. 
-            Quisque feugiat neque lobortis elit aliquam, id sollicitudin nibh venenatis. 
-            Cras laoreet sem eu mattis imperdiet. Mauris ut felis magna. 
-            Morbi purus ante, placerat sit amet porttitor quis, molestie sed massa. 
-            Cras vitae erat gravida, fermentum magna quis, finibus leo. Nulla facilisi. 
-            Sed dictum, eros non sollicitudin tempus, 
-            erat quam tristique justo, nec hendrerit ante dui a quam. 
-            Curabitur sed ligula pretium, vestibulum ipsum in, ornare mauris. 
-            Ut pellentesque eros quis sem tincidunt mollis. Vivamus vitae nisi mollis, 
-            ultrices augue eget, accumsan augue. Praesent lacus dolor, 
-            interdum congue nulla sed, maximus blandit eros. 
-            Ut lobortis ultrices varius. </pre></p>
-        <video src="https://www.youtube.com/watch?v=Nvlt0xfu6bM"></video>
+<body>
+    <iframe src="song.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe> 
+    <audio autoplay loop id="playAudio">
+        <source src="song.mp3">
+    </audio>
+    <img class="left" src="FickleCheerfulConey.webp" width="200" height="600" border="0">
+    <div class="content">
+        
+        <h5 class="demo">Happy Birthday LoremIpsu</h5>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
+            Nulla dapibus fringilla suscipit. Nunc ultricies dapibus arcu, <br>
+            sit amet finibus magna consequat sed. Donec faucibus dolor ac <br>
+            erat dignissim vehicula. Quisque feugiat neque lobortis elit aliquam, <br>
+            id sollicitudin nibh venenatis. Cras laoreet sem eu mattis imperdiet. <br>
+            Mauris ut felis magna. Morbi purus ante, placerat sit amet porttitor <br>
+            quis, molestie sed massa. Cras vitae erat gravida, fermentum magna quis, <br>
+            finibus leo. Nulla facilisi. Sed dictum, eros non sollicitudin tempus, <br>
+            erat quam tristique justo, nec hendrerit ante dui a quam. Curabitur <br>
+            sed ligula pretium, vestibulum ipsum in, ornare mauris. Ut pellentesque <br>
+            eros quis sem tincidunt mollis. Vivamus vitae nisi mollis, ultrices augue <br> 
+            eget, accumsan augue. Praesent lacus dolor, interdum congue nulla sed, <br>
+            maximus blandit eros. Ut lobortis ultrices varius. <br> </p>
     </div>
+    <img class="right" src="isabella.png" width="200" height="600" border="0">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="textyle.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.demo').textyle({
+                duration: 500,
+                delay: 200,
+                easing: 'linear',
+                callback: function(){
+                    $(this).css({
+                        transform: 'translateY(0px) rotateY(360deg)',
+                    })
+                }
+            })
+            $('p').textyle()
+        })   
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if(!isChrome){
+            $('#iframeAudio').remove()
+        }
+        else{
+            $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background 
+        }
+    </script>
 </body>
 </html>
