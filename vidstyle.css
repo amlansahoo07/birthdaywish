@@ -7,7 +7,7 @@ body{
 
 .center{
     margin: 0 auto; 
-    width: 400px; 
+    width: 380px; 
     display: block;
     border: 20px ridge #ddd;
 }
