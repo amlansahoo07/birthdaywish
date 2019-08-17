@@ -12,8 +12,33 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
     <title>Message</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <style>
+        /* Paste this css to your style sheet file or under head tag */
+        /* This only works with JavaScript, 
+            if it's not present, don't show loader */
+        .no-js #loader { display: none;  }
+        .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+        .se-pre-con {
+	        position: fixed;
+	        left: 0px;
+	        top: 0px;
+	        width: 100%;
+	        height: 100%;
+	        z-index: 9999;
+	        background: url(https://j2n9a3i8.stackpathcdn.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+        }
+    </style>
+    <script type="text/javascript">
+	    $(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	    });
+    </script>
 </head>
 <body>
+    <div class="se-pre-con"></div>
     <iframe src="song.mp3" allow="autoplay" style="display:none" id="iframeAudio">
     </iframe> 
     <audio autoplay loop id="playAudio">
@@ -25,20 +50,23 @@
         <h5 class="demo">Happy Birthday Krishnaja</h5>
         <p>
             Time passes by and another year gets over, <br>
-            Today is your Birthday I wish I could gift you a Rover. <br>
-            Couldn't write a line more stupider- Forgive me for my crime, <br>
+            On a day this special I wish I could gift you a Rover. <br>
+            Couldn't write a line more stupider forgive me for my crime, <br>
             All this just because I wanted to start a rhyme. <br>
-            Roses are red and Violets are blue, <br>
-            Your special day it is a very Happy Birthday to Youuu. <br>
-            Blow out all your candles Make your wishes come true <br>
-            Eat slices after slices of cake Nothing is too good for you. <br>
+            Blow out all your candles make your wishes come true <br>
+            Set aside all your worries overcome your obstacles anew. <br>
+            Make sure a broken leg again is not what you look forward to <br>
+            In your language I wish you Puttinaroju Shubhakankshalu. <br>
             You're a person truly beautiful both In and Out, <br>
             Everything is so wonderful when it's you about. <br>
-            My fondest wishes are for you Since today is your special day, <br>
-            May every dream you chase Come true and never stray <br> 
-            You are so special to me You deserve the Best of all, <br>
-            May your birthday be ageless May you know joy big and small. <br><br>
-            Click here for your final <span><a href="video.html">Surprise</a></span> <br> 
+            Be it winters summers or rains, <br>
+            You're the perfect example of beauty with brains. <br>
+            My fondest wishes are for you on your day, <br>
+            May every dream you chase come true and never stray. <br> 
+            You are so special to me you deserve the best of all, <br>
+            May your birthday be ageless may you know joy big and small. <br>
+            WISH YOU A VERY HAPPY AND PROSPEROUS BIRTHDAY !!<br><br>
+            With this I have one final thing for you <span><a href="video.html">Click Here</a></span> <br> 
         </p>
     </div>
     <img class="right" src="isabella.png" width="200" height="600" border="0">
